@@ -44,43 +44,10 @@ const Index = () => {
   let fundDouble = [];
 
   return (
-    <div className="w-screen flex flex-col items-center justify-center">
-        
-        <span className='text-white sm:hidden'>wallet - {account}</span>
-        <span className='sm:hidden'>xQore - {config?.contractXqore}</span>
-        <div className="flex flex-col items-center">
-          <span className='text-green'> all activated - {isActiveCount}</span>
-          <span className='text-red'> all NOT activated - {isNotActiveCount}</span>
-          <span className='text-green'> bnb back - {totalBnbForRefound}</span>
-          <span className='text-red'> bnb for upgrade - {totalBnbForUpg}</span>
-        </div>
-        {!account && (
-          <button onClick={() => setOpenedModal(true)} className='bg-white p-10 text-black'>
-            Connect wallet
-          </button>
-        )}
-      {account && (
-           <div className="w-full flex items-center justify-center sm:h-full sm:p-2 ">
-           <div className="flex flex-col w-[950px] w-full items-center justify-center ">
-            <div className="h-[5px] w-full bg-white-200 my-2.5"></div>
-             {wallets.map((item, itemIndex) => {
-              const l = Lvls.indexOf(item.value)
-              if (itemIndex > 138) {
-                return (
-                  <>
-                    <LevelCard idx={itemIndex+5} activateBefore={item?.activateBefore} totalBnbForUpg={totalBnbForUpg} totalBnbForRefound={totalBnbForRefound} setTotalBnbForRefound={setTotalBnbForRefound} setTotalBnbForUpg={setTotalBnbForUpg} isActiveCount={isActiveCount} isNotActiveCount={isNotActiveCount} setIsActiveCount={setIsActiveCount} setIsNotActiveCount={setIsNotActiveCount} valueLvl={item.value} level={l+1} wallet={item?.wallet} /> 
-                    {/* <div className="h-[5px] w-full bg-white-200 my-2.5"></div> */}
-                  </>
-                )
-              } 
-              return null;
-              })}
-             </div>    
-   
-         </div>
-   
-      )}
-      <ActivateModal handleCloseModal={() => setOpenedModal(false)} openedModal={openedModal} />
+    <div className="w-screen flex flex-col items-center justify-center space-y-2">
+      <span> Eto test obucha </span> 
+      <a className='text-2xl underline' href="/test1"> - eto 1 - </a>
+      <a className='text-2xl underline' href="/test2"> - eto 2 - </a>
     </div>
   )
 }
